@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애너그램 퀴즈 게임</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+
+<body>
+    <h4>애너그램 퀴즈 게임</h4>
+    <div class="progress">
+        <div id="progress">1</div>
+    </div>
+    <div id="quizpart">
+        <h1 id="quiz">
+
+        </h1>
+    </div>
+    <div class="anspart">
+        <input type="text" id="answer" autocomplete="off">
+    </div>
+    <br>
+    <div class="hintpart">
+        <button type="button" id="hintBtn" onclick="toggleText()">힌트</button>
+    </div>
+    <div class="subpart">
+        <button class="enterBtn" onclick="submit()">확인</button>
+        <div id="checkpart" style="font-weight: bold;"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
