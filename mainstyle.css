@@ -1,0 +1,95 @@
+@font-face {
+    font-family: 'SeoulAlrimTTF-Heavy';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2505-1@1.0/SeoulAlrimTTF-Heavy.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
+    font-family: 'SeoulAlrimTTF-Heavy';
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 10px;
+    padding: 0;
+    background-color: lightsteelblue;
+}
+
+h1, h3, h4, h5 {
+    text-align: center;
+}
+
+h1 {
+    margin: 8% 0 5%;
+    font-size: 5.2vw;
+}
+
+h3{
+    margin: 0% 0 2%;
+    font-size: 2vw;
+}
+
+h4{
+    margin: 1% 0 0%;
+    font-size: 1.3vw;
+}
+
+h5 {
+    margin: 8% 0 1%;
+    font-size: 1.2vw;
+    font-weight: lighter;
+}
+
+.stageoption {
+    display: flex;
+    justify-content: center;
+    gap: 4%;
+    flex-wrap: wrap;
+}
+
+.item {
+    background-color: white;
+    color: #414199;
+    width: 200px;
+    height: 52px;
+    padding: auto;
+    font-size: 2.6vw;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.item:active {
+    background-color: aliceblue;
+    transform: scale(0.96);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.mainBtn {
+    display: flex;
+    justify-content: center;
+    gap: 8%;
+    flex-wrap: wrap;
+}
+
+#explanationBtn, #startBtn {
+    background-color: #5151aa;
+    color: white;
+    width: 340px;
+    height: 65px;
+    padding: auto;
+    font-size: 2.7vw;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+#explanationBtn:active, #startBtn:active {
+    background-color: #414199;
+    transform: scale(0.96);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
