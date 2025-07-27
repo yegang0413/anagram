@@ -1,0 +1,78 @@
+@font-face {
+    font-family: 'SeoulAlrimTTF-Heavy';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2505-1@1.0/SeoulAlrimTTF-Heavy.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
+    font-family: 'SeoulAlrimTTF-Heavy';
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 10px;
+    padding: 0;
+    background-color: lightsteelblue;
+}
+
+h1, h4 {
+    text-align: center;
+}
+
+h1 {
+    margin: 10% 0 3%;
+    color: #414199;
+    font-size: 8vw;
+}
+
+h4 {
+    margin: 1% 0 0%;
+    font-size: 1.3vw;
+}
+
+.correct {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin: 0 auto;
+    border: none;
+    border-radius: 12px;
+    background-color: white;
+    width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 2vw;
+}
+
+.count {
+    color: #414199
+}
+
+.resultBtn {
+    display: flex;
+    justify-content: center;
+    gap: 8%;
+    flex-wrap: wrap;
+    margin: 4% 0 5%;
+}
+
+#tryAgain, #goHome {
+    background-color: #5151aa;
+    color: white;
+    width: 340px;
+    height: 65px;
+    padding: auto;
+    font-size: 2.7vw;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+#tryAgain:active, #goHome:active {
+    background-color: #414199;
+    transform: scale(0.96);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
