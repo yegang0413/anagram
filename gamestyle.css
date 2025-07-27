@@ -1,0 +1,109 @@
+@font-face {
+    font-family: 'SeoulAlrimTTF-Heavy';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2505-1@1.0/SeoulAlrimTTF-Heavy.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
+    font-family: 'SeoulAlrimTTF-Heavy';
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 10px;
+    padding: 0;
+    background-color: lightsteelblue;
+}
+
+h1, h4 {
+    text-align: center;
+}
+
+h1 {
+    margin: 8% 0 3%;
+    font-size: 7vw;
+}
+
+h4 {
+    margin: 1% 0 0%;
+    font-size: 1.3vw;
+}
+
+.anspart {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 600px;
+    height: 50px;
+    font-size: 2.6vw;
+}
+
+.anspart:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.anspart::placeholder {
+    color: darkgray;
+}
+
+#answer {
+    width: 500px;
+    height: 55px;
+    font-size: 2vw;
+}
+
+.hintpart {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0% 0 4.5%;
+}
+
+#hintBtn {
+    background-color: white;
+    color: #414199;
+    width: 200px;
+    height: 52px;
+    padding: auto;
+    font-size: 2.6vw;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+#hintBtn:active {
+    background-color: aliceblue;
+    transform: scale(0.96);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.subpart {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0% 0 5%;
+}
+
+#enterBtn {
+    background-color: #5151aa;
+    color: white;
+    width: 340px;
+    height: 65px;
+    padding: auto;
+    font-size: 2.7vw;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+#enterBtn:active {
+    background-color: #414199;
+    transform: scale(0.96);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
