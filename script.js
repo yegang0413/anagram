@@ -71,6 +71,7 @@ function initGamePage() {
         return;
     }
 
+    selectedLevel = level;
     fetchData(level);
 
     const enterBtn = document.getElementById("enterBtn");
@@ -88,19 +89,17 @@ function initGamePage() {
 
 // ===== finishpage.html 전용 =====
 function initFinishPage() {
-    allowExit = true; // 종료 페이지에서는 나가기 경고 X
+    allowExit = true;
 
     const params = new URLSearchParams(window.location.search);
     const score = params.get("score") || 0;
     const level = params.get("level") || "";
 
-    // 점수 표시
     const countEl = document.querySelector(".count");
     if (countEl) {
         countEl.textContent = score;
     }
 
-    // 다시하기 버튼
     const tryAgainBtn = document.getElementById("tryAgain");
     if (tryAgainBtn) {
         tryAgainBtn.addEventListener("click", () => {
@@ -113,7 +112,6 @@ function initFinishPage() {
         });
     }
 
-    // 처음으로 버튼
     const goHomeBtn = document.getElementById("goHome");
     if (goHomeBtn) {
         goHomeBtn.addEventListener("click", () => {
