@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>애너그램 퀴즈 게임</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="howstyle.css">
     <link rel="stylesheet" href="responsive.css">
 </head>
 
-<body>
+<body style="background-color: lightsteelblue;">
+    <h4 style="color:#5d5db3;">애너그램 퀴즈 게임</h4>
     <h2><span style="color: #414199;">애너그램</span>이란?</h2>
     <h3>
         애너그램은 단어나 문장을 구성하고 있는 문자의 순서를 바꾸어 다른 단어나
@@ -33,8 +34,16 @@
         <br>
         HARD : 자음, 모음을 분리하여 생각해야 하고 어려운 단어나 글자수가 많은
         단어들로 이루어져 있습니다.
+        <br>
+        *난이도별 차이가 심할 수 있습니다.
     </h3>
     <div class="back">
         <button type="button" id="backBtn">돌아가기</button>
+        <script>
+            document.getElementById("backBtn").addEventListener("click", function () {
+                history.back();
+            });
+        </script>
     </div>
 </body>
+</html>
