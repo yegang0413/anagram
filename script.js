@@ -108,9 +108,9 @@ function initFinishPage() {
         tryAgainBtn.addEventListener("click", () => {
             if (!level) {
                 alert("난이도 정보가 없습니다. 처음으로 돌아갑니다.");
-                window.location.href = "index.html";
+                window.location.href = "./index.html";
             } else {
-                window.location.href = `gamepage.html?level=${encodeURIComponent(level)}`;
+                window.location.href = `./gamepage.html?level=${encodeURIComponent(level)}`;
             }
         });
     }
@@ -118,7 +118,7 @@ function initFinishPage() {
     const goHomeBtn = document.getElementById("goHome");
     if (goHomeBtn) {
         goHomeBtn.addEventListener("click", () => {
-            window.location.href = "index.html";
+            window.location.href = "./index.html";
         });
     }
 }
@@ -147,7 +147,7 @@ async function fetchData(selectedLevel) {
 
     if (datalist.length === 0) {
         alert(`${selectedLevel} 난이도의 문제가 없습니다.`);
-        window.location.href = "index.html";
+        window.location.href = "./index.html";
         return;
     }
 
@@ -219,5 +219,5 @@ function showHint() {
 
 function endGame() {
     allowExit = true;
-    window.location.href = `finishpage.html?score=${score}&level=${encodeURIComponent(selectedLevel)}`;
+    window.location.href = `./finishpage.html?score=${score}&level=${encodeURIComponent(selectedLevel)}`;
 }
