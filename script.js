@@ -1,3 +1,5 @@
+console.log("script.js is running");
+
 let datalist = [];
 let selectedLevel = null;
 let currentIndex = 0;
