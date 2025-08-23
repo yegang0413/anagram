@@ -1,4 +1,3 @@
-// ===== 공용 전역 변수 선언 =====
 let datalist = [];
 let selectedLevel = null;
 let currentIndex = 0;
@@ -7,27 +6,36 @@ let correct = 0;
 let allowExit = false;
 let score = 0;
 
-// ===== 페이지 구분 =====
 document.addEventListener("DOMContentLoaded", () => {
     const page = window.location.pathname;
 
     if (page.includes("mainpage.html")) {
+        allowExit = true;
         initMainPage();
     } 
     else if (page.includes("gamepage.html")) {
+        allowExit = false;
         initGamePage();
     }
     else if (page.includes("finishpage.html")) {
+        allowExit = true;
         initFinishPage();
     }
 });
 
-// ===== mainpage.html 전용 =====
+function beforeUnloadHandler(e) {
+    if (allowExit) return;
+    e.preventDefault();
+    e.returnValue = '';
+    return '작성 중인 내용이 사라질 수 있습니다. 정말 나가시겠습니까?';
+}
+
+window.addEventListener("beforeunload", beforeUnloadHandler);
+
 function initMainPage() {
     const levelBtns = document.querySelectorAll(".item");
     const formEl = document.getElementById("goStart");
     const explanationBtn = document.getElementById("explanationBtn");
-    allowExit = true;
 
     if (levelBtns.length) {
         levelBtns.forEach(btn => {
@@ -59,11 +67,9 @@ function initMainPage() {
     }
 }
 
-// ===== gamepage.html 전용 =====
 function initGamePage() {
     const params = new URLSearchParams(window.location.search);
     const level = params.get("level");
-    allowExit = false;
 
     if (!level) {
         alert("난이도를 선택해주세요.");
@@ -87,10 +93,7 @@ function initGamePage() {
     }
 }
 
-// ===== finishpage.html 전용 =====
 function initFinishPage() {
-    allowExit = true;
-
     const params = new URLSearchParams(window.location.search);
     const score = params.get("score") || 0;
     const level = params.get("level") || "";
@@ -120,7 +123,6 @@ function initFinishPage() {
     }
 }
 
-// ===== CSV 파싱 =====
 function parseCSV(text) {
     return text.trim().split("\n").map(line =>
         line.split(",").map(cell => cell.trim().replace(/^"|"$/g, ""))
@@ -131,7 +133,6 @@ function shuffle(array) {
     return array.sort(() => Math.random() - 0.5);
 }
 
-// ===== 데이터 로드 =====
 async function fetchData(selectedLevel) {
     const response = await fetch("data.csv");
     if (!response.ok) {
@@ -154,21 +155,12 @@ async function fetchData(selectedLevel) {
     startGame();
 }
 
-// ===== 게임 시작 =====
 function startGame() {
     currentIndex = 0;
     showQuiz();
     allowExit = false;
 }
 
-function beforeUnloadHandler(e) {
-    if (allowExit) return;
-    e.preventDefault();
-    e.returnValue = '';
-    return '작성 중인 내용이 저장되지 않을 수 있습니다. 정말 페이지를 떠나시겠습니까?'
-}
-
-// ===== 문제 표시 =====
 function showQuiz() {
     if (!datalist[currentIndex]) return;
 
@@ -193,7 +185,6 @@ function showQuiz() {
     answerEl.focus();
 }
 
-// ===== 정답 확인 =====
 function checkAnswer() {
     if (isAnswering) return;
     isAnswering = true;
@@ -221,13 +212,11 @@ function checkAnswer() {
     }
 }
 
-// ===== 힌트 표시 =====
 function showHint() {
     const hint = datalist[currentIndex][datalist[currentIndex].length - 1];
     document.getElementById("hint").textContent = hint;
 }
 
-// ===== 게임 종료 =====
 function endGame() {
     allowExit = true;
     window.location.href = `finishpage.html?score=${score}&level=${encodeURIComponent(selectedLevel)}`;
