@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>애너그램 퀴즈 게임</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="finishstyle.css">
     <link rel="stylesheet" href="responsive.css">
 </head>
 
-<body>
+<body style="background-color: lightsteelblue;">
+    <script src="script.js"></script>
+    <h4 style="color:#5d5db3;">애너그램 퀴즈 게임</h4>
     <h1>수고하셨습니다!</h1>
-    <div class="result">
-        <div class="correct" id="correctcount">0/5개 맞춤</div>
-        <br>
-        <button class="tryAgain" onclick="restartGame()">다시하기</button>
-        <button class="goHome" onclick="goHome()">처음으로</button>
+    <div class="correct" id="correctcount">
+        <span class="count" id="score">0</span>/5개 맞춤</div>
+    <div class="resultBtn">
+        <button id="tryAgain">다시하기</button>
+    <button id="goHome">처음으로</button>
     </div>
     <script src="script.js"></script>
 </body>
