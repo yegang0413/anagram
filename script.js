@@ -9,7 +9,7 @@ let score = 0;
 document.addEventListener("DOMContentLoaded", () => {
     const page = window.location.pathname;
 
-    if (page.includes("mainpage.html")) {
+    if (page.includes("index.html")) {
         allowExit = true;
         initMainPage();
     } 
@@ -73,7 +73,7 @@ function initGamePage() {
 
     if (!level) {
         alert("난이도를 선택해주세요.");
-        window.location.href = "./mainpage.html";
+        window.location.href = "./index.html";
         return;
     }
 
@@ -108,7 +108,7 @@ function initFinishPage() {
         tryAgainBtn.addEventListener("click", () => {
             if (!level) {
                 alert("난이도 정보가 없습니다. 처음으로 돌아갑니다.");
-                window.location.href = "mainpage.html";
+                window.location.href = "index.html";
             } else {
                 window.location.href = `gamepage.html?level=${encodeURIComponent(level)}`;
             }
@@ -118,7 +118,7 @@ function initFinishPage() {
     const goHomeBtn = document.getElementById("goHome");
     if (goHomeBtn) {
         goHomeBtn.addEventListener("click", () => {
-            window.location.href = "mainpage.html";
+            window.location.href = "index.html";
         });
     }
 }
@@ -137,7 +137,7 @@ async function fetchData(selectedLevel) {
     const response = await fetch("data.csv");
     if (!response.ok) {
         alert("데이터 파일을 불러오는 데 실패했습니다.");
-        location.href = "./mainpage.html";
+        location.href = "./index.html";
         return;
     }
     const text = await response.text();
@@ -147,7 +147,7 @@ async function fetchData(selectedLevel) {
 
     if (datalist.length === 0) {
         alert(`${selectedLevel} 난이도의 문제가 없습니다.`);
-        window.location.href = "mainpage.html";
+        window.location.href = "index.html";
         return;
     }
 
