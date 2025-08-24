@@ -63,7 +63,7 @@ h5 {
 }
 
 .item.selected {
-    background-color: aliceblue;
+    background-color: rgb(205, 225, 241);
 }
 
 .mainBtn {
