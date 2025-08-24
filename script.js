@@ -8,22 +8,20 @@ document.addEventListener("DOMContentLoaded", () => {
     let allowExit = false;
     let score = 0;
 
-    document.addEventListener("DOMContentLoaded", () => {
-        const page = window.location.pathname;
+    const page = window.location.pathname;
 
-        if (page.includes("index.html")) {
-            allowExit = true;
-            initMainPage();
-        } 
-        else if (page.includes("gamepage.html")) {
-            allowExit = false;
-            initGamePage();
-        }
-        else if (page.includes("finishpage.html")) {
-            allowExit = true;
-            initFinishPage();
-        }
-    });
+    if (page.includes("index.html")) {
+        allowExit = true;
+        initMainPage();
+    } 
+    else if (page.includes("gamepage.html")) {
+        allowExit = false;
+        initGamePage();
+    }
+    else if (page.includes("finishpage.html")) {
+        allowExit = true;
+        initFinishPage();
+    }
 
     function beforeUnloadHandler(e) {
         if (allowExit) return;
