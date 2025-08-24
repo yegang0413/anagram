@@ -108,16 +108,59 @@ h4 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-#feedback {
-    font-size: 3vw;
+
+/* 모바일 (최대 600px) */
+@media (max-width: 600px) {
+  h1 { font-size: 8vw; }
+  h2, h3, h4, h5 { font-size: 4.5vw; }
+
+  .item, #hintBtn {
+    width: 90%;
+    font-size: 5vw;
+    height: auto;
+  }
+
+  #explanationBtn, #startBtn,
+  #enterBtn, #tryAgain, #goHome, #backBtn {
+    width: 90%;
+    font-size: 5vw;
+    height: auto;
+  }
+
+  .anspart, #answer {
+    width: 90%;
+    font-size: 5vw;
+  }
+
+  .correct {
+    width: 90%;
+    font-size: 4.5vw;
+  }
 }
 
-#hint {
-    font-size: 3vw;
-    margin-left: 2%;
-}
+/* 태블릿 (601px ~ 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  h1 { font-size: 6vw; }
+  h2, h3, h4, h5 { font-size: 3vw; }
 
-#progress {
-    font-size: 2vw;
-    margin-left: 2%;
+  .item, #hintBtn {
+    width: 70%;
+    font-size: 3.5vw;
+  }
+
+  #explanationBtn, #startBtn,
+  #enterBtn, #tryAgain, #goHome, #backBtn {
+    width: 70%;
+    font-size: 3.5vw;
+  }
+
+  .anspart, #answer {
+    width: 80%;
+    font-size: 3.5vw;
+  }
+
+  .correct {
+    width: 80%;
+    font-size: 3vw;
+  }
 }
