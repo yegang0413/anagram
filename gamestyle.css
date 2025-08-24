@@ -56,10 +56,13 @@ h4 {
     height: 55px;
     font-size: 2vw;
     justify-content: center;
+    align-items: center;
 }
 
 .hintpart {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     margin: 0% 0 4.5%;
 }
@@ -88,6 +91,8 @@ h4 {
 
 .subpart {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     margin: 0% 0 5%;
 }
