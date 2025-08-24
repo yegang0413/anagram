@@ -81,14 +81,13 @@ h4 {
 }
 
 #hintBtn:active {
-    background-color: aliceblue;
+    background-color: rgb(170, 192, 221);
     transform: scale(0.96);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .subpart {
     display: flex;
-    align-items: center;
     flex-wrap: wrap;
     margin: 0% 0 5%;
 }
